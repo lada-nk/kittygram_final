@@ -12,19 +12,19 @@ services:
     volumes:
       - pg_data:/var/lib/postgresql/data
   backend:
-    build: ./backend/
+    image: ladank/kittygram_backend
     env_file: .env.example
     volumes:
       - static:/backend_static
       - media:/media
   frontend:
     env_file: .env.example
-    build: ./frontend/
+    image: ladank/kittygram_frontend
     command: cp -r /app/build/. /frontend_static/
     volumes:
       - static:/frontend_static
   gateway:
-    build: ./nginx/
+    image: ladank/kittygram_gateway
     env_file: .env.example
     ports:
       - 9000:80

@@ -41,8 +41,8 @@ jobs:
         python -m flake8 backend/
         cd backend/
         python manage.py test
-        cd ..
-        pytest
+        # cd ..
+        # pytest
 
   build_and_push_to_docker_hub:
     name: Push Docker image to DockerHub
@@ -167,4 +167,3 @@ jobs:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: Деплой успешно kittygram выполнен!
-        

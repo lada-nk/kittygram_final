@@ -17,10 +17,10 @@ api_urls = [
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(api_urls)),
-    # path('api/', include(router.urls)),
-    # path('api/', include('djoser.urls')),  # Работа с пользователями
-    # path('api/', include('djoser.urls.authtoken')),  # Работа с токенами
+    # path('api/', include(api_urls)),
+    path('api/', include(router.urls)),
+    path('api/', include('djoser.urls')),  # Работа с пользователями
+    path('api/', include('djoser.urls.authtoken')),  # Работа с токенами
 ]
 
 if settings.DEBUG:

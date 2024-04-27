@@ -3,7 +3,7 @@
 
 Kittygram предназначен для поднятия настроения путем выкладывания фото котиков и их достижений.
 
-### Как запустить проект локольно:
+### Как запустить проект локально:
 
 Клонировать репозиторий и перейти в него в командной строке:
 
@@ -32,6 +32,10 @@ python3 -m venv venv
     ```
     source venv/scripts/activate
     ```
+
+```
+cd backend
+```
 
 ```
 python3 -m pip install --upgrade pip
@@ -98,5 +102,5 @@ https://requests.readthedocs.io/en/latest/
 
 ### Workflow status:
 
-![example workflow]
+![Kittigram workflow status]
 (https://github.com/lada-nk/kittygram_final/actions/workflows/main.yml/badge.svg)

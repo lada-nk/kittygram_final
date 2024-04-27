@@ -5,9 +5,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('SECRET_KEY', 'django')
 
-DEBUG = False
+DEBUG = os.getenv('DEBUG', False')
 
-ALLOWED_HOSTS = ['kittygram-ladank.sytes.net']
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'kittygram-ladank.sytes.net')
 
 INSTALLED_APPS = [
     'django.contrib.admin',

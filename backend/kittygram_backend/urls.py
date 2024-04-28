@@ -15,6 +15,7 @@ api_urls = [
     path('', include('djoser.urls.authtoken')),  # Работа с токенами
 ]
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('api/', include(api_urls)),

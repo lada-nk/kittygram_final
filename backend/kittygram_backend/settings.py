@@ -9,9 +9,9 @@ load_dotenv(find_dotenv('.env'))
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-DEBUG = False
+DEBUG = os.environ.get('DEBUG')
 
-ALLOWED_HOSTS = ['kittygram-ladank.sytes.net']
+ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOST')]
 
 INSTALLED_APPS = [
     'django.contrib.admin',

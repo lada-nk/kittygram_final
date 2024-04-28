@@ -1,11 +1,15 @@
 import os
 from pathlib import Path
 
+from dotenv import find_dotenv, load_dotenv
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv('SECRET_KEY', 'django')
+load_dotenv(find_dotenv('.env'))
 
-DEBUG = True
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
+DEBUG = False
 
 ALLOWED_HOSTS = ['kittygram-ladank.sytes.net']
 
@@ -92,7 +96,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'collected_static'

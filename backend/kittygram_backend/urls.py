@@ -9,11 +9,7 @@ router = routers.DefaultRouter()
 router.register(r'cats', CatViewSet)
 router.register(r'achievements', AchievementViewSet)
 
-api_urls = [
-    path('', include(router.urls)),
-    path('', include('djoser.urls')),  # Работа с пользователями
-    path('', include('djoser.urls.authtoken')),  # Работа с токенами
-]
+api_urls = (router.urls, 'djoser.urls', 'djoser.urls.authtoken')
 
 
 urlpatterns = [

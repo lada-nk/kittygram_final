@@ -8,28 +8,24 @@ volumes:
 services:
   db:
     image: postgres:13
-    env_file: .env
+    env_file: .env.example
     volumes:
       - pg_data:/var/lib/postgresql/data
   backend:
     build: ./backend/
-    depends_on:
-      - db
-    env_file: .env
+    env_file: .env.example
     volumes:
       - static:/backend_static
       - media:/media
   frontend:
-    env_file: .env
+    env_file: .env.example
     build: ./frontend/
     command: cp -r /app/build/. /frontend_static/
     volumes:
       - static:/frontend_static
   gateway:
     build: ./nginx/
-    depends_on:
-      - backend
-    env_file: .env
+    env_file: .env.example
     ports:
       - 9000:80
     volumes:
